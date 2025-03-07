@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/notifications/css/lobibox.min.css">
     <!--bootstrap css-->
     <link href="<?= base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>assets/plugins/datatable/css/dataTables.min.css" rel="stylesheet" />
+    <link href="<?= base_url() ?>assets/plugins/datatable/css/datatables.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
     <!--main css-->
@@ -83,7 +83,7 @@
     <!--plugins-->
     <script src="<?= base_url() ?>assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
     <script src="<?= base_url() ?>assets/plugins/metismenu/metisMenu.min.js"></script>
-    <script src="<?= base_url() ?>assets/plugins/datatable/js/dataTables.min.js"></script>
+    <script src="<?= base_url() ?>assets/plugins/datatable/js/datatables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <!--notification js -->

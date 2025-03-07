@@ -11,7 +11,7 @@ use App\Models\Admin\TopicsModel;
 use App\Models\Admin\ScopesModel;
 use App\Models\Admin\FocusesModel;
 use App\Models\Admin\BoardCommitteeModel;
-use App\models\Admin\ItineraryScheduleModel;
+use App\Models\Admin\ItineraryScheduleModel;
 use App\Models\Admin\SubmissionTemplateModel;
 
 class Home extends BaseController

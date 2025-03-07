@@ -1,0 +1,528 @@
+/* Gunakan font Roboto untuk body */
+body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Gunakan font Montserrat untuk judul */
+h1,
+h2,
+h3 {
+  font-family: "Montserrat", sans-serif;
+}
+
+.navbar {
+  transition: background-color 0.5s ease;
+}
+
+.navbar.bg-dark {
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+/* Navbar Floating */
+.navbar-floating {
+  position: fixed;
+  top: 30px; /* Mulai dari atas (di luar layar) */
+  left: 50%; /* Letakkan di tengah horizontal */
+  transform: translateX(-50%); /* Geser kembali ke tengah */
+  width: 90%; /* Lebar navbar (sesuaikan jika diperlukan) */
+  max-width: 1200px; /* Maksimal lebar navbar */
+  border-radius: 15px; /* Membulatkan sudut */
+  z-index: 1050; /* Pastikan di atas elemen lain */
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Efek bayangan */
+  transition: top 0.5s ease; /* Transisi posisi 'top' agar navbar muncul dari atas */
+}
+
+.navbar-nav .nav-link {
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #6dc4fd; /* Warna saat di hover */
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #007acc; /* Warna garis bawah */
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Menghilangkan ikon panah */
+.nav-item.dropdown .nav-link::after {
+  display: none;
+}
+
+/* Dropdown muncul saat hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Pastikan dropdown tetap tersembunyi saat tidak hover */
+.nav-item.dropdown .dropdown-menu {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+@media (max-width: 576px) {
+  .navbar-nav .nav-link {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #007acc;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+.section-title::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 4px;
+  background: #007acc;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+.section-title:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* CSS untuk carousel */
+.carousel-item {
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.carousel-item img {
+  max-height: 500px;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: auto;
+  }
+}
+
+.keynote-speaker,
+.plenary-speaker,
+.invited-speaker {
+  background: linear-gradient(to right, #f9f9f9, #eef1f5);
+}
+
+.keynote-card,
+.plenary-card,
+.invited-card {
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+  height: 100%;
+}
+
+.keynote-card:hover,
+.plenary-card:hover,
+.invited-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.keynote-img,
+.plenary-img,
+.invited-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px; /* Tetap sedikit membulat agar tampak halus */
+}
+
+.keynote-card .card-text,
+.plenary-card .card-text,
+.invited-card .card-text {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.timeline-steps {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.timeline-steps .timeline-step {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 1rem;
+}
+
+@media (min-width: 768px) {
+  .timeline-steps .timeline-step:not(:last-child):after {
+    content: "";
+    display: block;
+    border-top: 0.25rem dotted #3b82f6;
+    width: 3.46rem;
+    position: absolute;
+    left: 7.5rem;
+    top: 0.3125rem;
+  }
+  .timeline-steps .timeline-step:not(:first-child):before {
+    content: "";
+    display: block;
+    border-top: 0.25rem dotted #3b82f6;
+    width: 3.8125rem;
+    position: absolute;
+    right: 7.5rem;
+    top: 0.3125rem;
+  }
+}
+
+.timeline-steps .timeline-content {
+  width: 10rem;
+  text-align: center;
+}
+
+.timeline-steps .timeline-content .inner-circle {
+  border-radius: 1.5rem;
+  height: 1rem;
+  width: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3b82f6;
+}
+
+.timeline-steps .timeline-content .inner-circle:before {
+  content: "";
+  background-color: #3b82f6;
+  display: inline-block;
+  height: 3rem;
+  width: 3rem;
+  min-width: 3rem;
+  border-radius: 6.25rem;
+  opacity: 0.5;
+}
+
+.conference-topics {
+  background-color: #f7f7f7;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.topic-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.topic-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.topic-card h3 {
+  font-size: 1rem;
+  color: #007acc;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .topic-card {
+    padding: 20px;
+  }
+}
+
+.custom-footer {
+  background: linear-gradient(135deg, #0056b3, #007acc); /* Gradasi biru */
+  color: white;
+  font-family: "Arial", sans-serif;
+  letter-spacing: 0.5px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.custom-footer h5 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  border-bottom: 3px solid white;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.custom-footer ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.custom-footer ul li {
+  margin-bottom: 10px;
+}
+
+.custom-footer a {
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.custom-footer a:hover {
+  color: #ffd700; /* Warna emas untuk hover */
+}
+
+.social-link {
+  display: inline-block;
+  color: white;
+  margin-right: 15px;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.social-link:hover {
+  transform: scale(1.2);
+  color: #ffd700;
+}
+
+.custom-footer hr {
+  border-top: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.custom-footer p,
+.custom-footer small {
+  font-size: 0.9rem;
+}
+
+.custom-footer .fa-heart {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.masthead {
+  background-image: url("https://res.cloudinary.com/dkrnt4qg4/image/upload/v1738157679/cld-sample-2.jpg");
+  background-size: cover;
+  background-attachment: fixed; /* Efek Parallax */
+  color: #fff;
+  padding: 180px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Overlay untuk efek gelap di atas gambar */
+.masthead .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Transparansi untuk meningkatkan kontras */
+  z-index: 1;
+}
+
+.masthead .site-heading {
+  position: relative;
+  z-index: 2;
+}
+
+/* Breadcrumb */
+.breadcrumb-nav {
+  transform: translateX(50%);
+  z-index: 2;
+}
+
+.breadcrumb {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px 15px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px); /* Efek blur transparan */
+}
+
+.breadcrumb-item a {
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.breadcrumb-item a:hover {
+  color: #ffd700; /* Warna emas saat hover */
+}
+
+/* Animasi */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.responsive-iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  max-height: 90vh;
+}
+
+/* Styling Umum untuk Tabel */
+.table-custom {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table-custom th,
+.table-custom td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.table-custom th {
+  background-color: #007acc;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.table-custom tr:nth-child(even) {
+  background-color: #f7f7f7;
+}
+
+.table-custom tr:hover {
+  background-color: #efefef;
+  transform: translateY(-2px);
+}
+
+.table-custom td {
+  font-size: 1rem;
+}
+
+/* Styling List */
+.list-group-item {
+  font-size: 1rem;
+  color: #555;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+  background-color: #007acc;
+  color: #fff;
+}
+
+/* Responsif untuk perangkat lebih kecil */
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: auto;
+  }
+
+  .topic-card {
+    padding: 20px;
+  }
+
+  .table-custom th,
+  .table-custom td {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .list-group-item {
+    padding: 8px;
+  }
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+#backToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #000;
+  opacity: 0.7;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#backToTopBtn:hover {
+  background-color: #555;
+}
+
+@media (max-width: 768px) {
+  iframe {
+    height: 400px;
+  }
+}
+@media (max-width: 576px) {
+  iframe {
+    height: 300px;
+  }
+}

@@ -1,84 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-bs-theme="blue-theme">
+
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= lang('Errors.pageNotFound') ?></title>
+    <!--favicon-->
+    <link rel="icon" href="<?= get_favicon() ?>" type="image/x-icon">
+    <!-- loader-->
+    <link href="<?= base_url() ?>assets/css/pace.min.css" rel="stylesheet">
+    <script src="<?= base_url() ?>assets/js/pace.min.js"></script>
 
-    <style>
-        div.logo {
-            height: 200px;
-            width: 155px;
-            display: inline-block;
-            opacity: 0.08;
-            position: absolute;
-            top: 2rem;
-            left: 50%;
-            margin-left: -73px;
-        }
-        body {
-            height: 100%;
-            background: #fafafa;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            color: #777;
-            font-weight: 300;
-        }
-        h1 {
-            font-weight: lighter;
-            letter-spacing: normal;
-            font-size: 3rem;
-            margin-top: 0;
-            margin-bottom: 0;
-            color: #222;
-        }
-        .wrap {
-            max-width: 1024px;
-            margin: 5rem auto;
-            padding: 2rem;
-            background: #fff;
-            text-align: center;
-            border: 1px solid #efefef;
-            border-radius: 0.5rem;
-            position: relative;
-        }
-        pre {
-            white-space: normal;
-            margin-top: 1.5rem;
-        }
-        code {
-            background: #fafafa;
-            border: 1px solid #efefef;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            display: block;
-        }
-        p {
-            margin-top: 1.5rem;
-        }
-        .footer {
-            margin-top: 2rem;
-            border-top: 1px solid #efefef;
-            padding: 1em 2em 0 2em;
-            font-size: 85%;
-            color: #999;
-        }
-        a:active,
-        a:link,
-        a:visited {
-            color: #dd4814;
-        }
-    </style>
+    <!--Styles-->
+    <link href="<?= base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= base_url() ?>assets/css/bootstrap-extended.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="<?= base_url() ?>sass/main.css" rel="stylesheet">
+    <link href="<?= base_url() ?>sass/blue-theme.css" rel="stylesheet">
+
 </head>
-<body>
-    <div class="wrap">
-        <h1>404</h1>
 
-        <p>
-            <?php if (ENVIRONMENT !== 'production') : ?>
-                <?= nl2br(esc($message)) ?>
-            <?php else : ?>
-                <?= lang('Errors.sorryCannotFind') ?>
-            <?php endif; ?>
-        </p>
-    </div>
+<body class="bg-error">
+
+    <!-- Start wrapper-->
+    <div class="pt-5">
+
+        <div class="container pt-5">
+            <div class="row pt-5">
+                <div class="col-lg-12">
+                    <div class="text-center error-pages">
+                        <h1 class="error-title text-white mb-3">404</h1>
+
+                        <p class="error-message text-white text-uppercase"><?= lang('Errors.sorryCannotFind') ?></p>
+
+                        <div class="mt-4 d-flex align-items-center justify-content-center gap-3">
+                            <a href="<?= base_url() ?>" class="btn btn-grd-danger rounded-5 px-4"><i class="bi bi-house-fill me-2"></i>Go To Home</a>
+                            <a href="javascript:history.back();" class="btn btn-light rounded-5 px-4"><i class="bi bi-arrow-left me-2"></i>Previous Page </a>
+                        </div>
+
+                        <div class="mt-4">
+                            <p class="mb-0">&copy; <?= date('Y') ?> Contoh Website. All rights reserved.</p>
+                            <small>Designed with <i class="bi bi-heart-fill text-danger"></i> by Ojifahru</small>
+                        </div>
+                        <hr class="border-light border-2">
+                        <?php $informasi = getInformasi(); ?>
+                        <div class="list-inline contacts-social mt-4">
+                            <a href="<?= $informasi['facebook'] ?>" class="list-inline-item bg-facebook text-white border-0"><i class="bi bi-facebook"></i></a>
+                            <a href="<?= $informasi['twitter'] ?>" class="list-inline-item bg-facebook text-white border-0"><i class="bi bi-twitter"></i></a>
+                            <a href="<?= $informasi['telepon1'] ?>" class="list-inline-item bg-whatsapp text-white border-0"><i class="bi bi-whatsapp"></i></a>
+                            <a href="<?= $informasi['linkedin'] ?>"" class=" list-inline-item bg-linkedin text-white border-0"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div><!--end row-->
+        </div>
+
+    </div><!--wrapper-->
+
+
+
 </body>
+
 </html>

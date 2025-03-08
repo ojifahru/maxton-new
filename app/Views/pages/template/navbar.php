@@ -26,7 +26,7 @@
                 </li>
                 <?php if (in_groups('admin') || in_groups('superadmin')): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('admin') ?>">Dashboard</a>
+                        <a class="nav-link" href="<?= base_url('admin') ?>" target="_blank">Dashboard</a>
                     </li>
                 <?php endif; ?>
             </ul>
@@ -62,7 +62,7 @@
                 </li>
                 <?php if (in_groups('admin') || in_groups('superadmin')): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('admin') ?>">Dashboard</a>
+                        <a class="nav-link" href="<?= base_url('admin') ?>" target="_blank">Dashboard</a>
                     </li>
                 <?php endif; ?>
             </ul>
